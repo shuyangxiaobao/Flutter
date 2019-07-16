@@ -7,6 +7,10 @@ import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
 import 'demo/draw_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
+import 'demo/basic_demo.dart';
+import 'demo/layout_demo.dart';
+import 'demo/7_view_demo.dart';
+import 'demo/7.sliver_demo.dart';
 void main(){
   runApp(App()
    
@@ -23,6 +27,7 @@ class App extends StatelessWidget{
     return  MaterialApp(
       debugShowCheckedModeBanner: false, //关闭debug 标识
       home: Home(),
+      // home: SliverDemo(),
       theme: ThemeData(
         primarySwatch: Colors.green, //导航栏颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -40,7 +45,7 @@ class Home extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return DefaultTabController(
-      length: 3,
+      length: 5,
       child: Scaffold(
       // backgroundColor: Colors.blue,
       appBar: AppBar( //顶部工具栏
@@ -77,6 +82,10 @@ class Home extends StatelessWidget{
           Tab(icon: Icon(Icons.mic)),
           Tab(icon: Icon(Icons.settings_brightness)),
           Tab(icon: Icon(Icons.mode_edit)),
+          Tab(icon: Icon(Icons.view_quilt)),
+          Tab(icon: Icon(Icons.title)),
+
+
 
         ],
       ),
@@ -86,9 +95,10 @@ class Home extends StatelessWidget{
         body:TabBarView(
           children: <Widget>[
             ListViewDemo(),
-            Icon(Icons.settings_brightness, size:200.0,color: Colors.purple,),
-            Icon(Icons.settings_bluetooth, size:200.0,color: Colors.green,),
-
+            BasicDemo(),
+            LayoutDemo(),
+            ViewDemo(),
+            SliverDemo(),
           ],
         ),
        drawer:DrawDemo(),
@@ -96,7 +106,7 @@ class Home extends StatelessWidget{
         // drawer: Text('左抽屉'),//抽屉
         endDrawer: Text('右抽屉'),//抽屉
 
-// 顶部导航栏
+// 底部导航栏
         bottomNavigationBar: BottomNavigationBarDemo()
 
       
