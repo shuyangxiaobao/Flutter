@@ -11,6 +11,7 @@ import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/7_view_demo.dart';
 import 'demo/7.sliver_demo.dart';
+import 'demo/8.navigator_demo.dart';
 void main(){
   runApp(App()
    
@@ -25,9 +26,15 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return  MaterialApp(
-      debugShowCheckedModeBanner: false, //关闭debug 标识
+      debugShowCheckedModeBanner: true, //关闭debug 标识
       home: Home(),
+      // home: NavigatorDemo(),
       // home: SliverDemo(),
+      initialRoute: 'www',
+      routes: {
+        'www': (context) => Home(),
+        '/about':(context) => Page(title: "关于"),
+      },
       theme: ThemeData(
         primarySwatch: Colors.green, //导航栏颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),

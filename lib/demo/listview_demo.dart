@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import '../model/post.dart';
-
+import '8.post_show.dart';
 
 class ListViewDemo extends StatelessWidget{
   @override
@@ -19,33 +19,57 @@ class ListViewDemo extends StatelessWidget{
    return Container(
      color: Colors.white,
      margin: EdgeInsets.fromLTRB(10,20,30,40), //left top  right bottom
-     child: Column(
+     child: Stack(
        children: <Widget>[
-         Image.network(posts[index].imageUrl),
-         SizedBox(height: 10.0,),
-         Text(
-           posts[index].title,
-           style: Theme.of(context).textTheme.title,
+         Column(
+          children: <Widget>[
+            AspectRatio(
+              aspectRatio: 16/9,
+              child: Image.network(posts[index].imageUrl,fit: BoxFit.cover,),
+            ),
+            SizedBox(height: 10.0,),
+            Text(
+              posts[index].title,
+              style: Theme.of(context).textTheme.title,
 
           // style: TextStyle(
           //     fontSize: 20,
           //     fontWeight: FontWeight.w900,
           // ),
            
-         ),
+            ),
          
-         Text(
-           posts[index].author,
-          //  style: Theme.of(context).textTheme.subtitle,
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w400,
-          ),
-         ),
-         SizedBox(height: 10,)
+            Text(
+              posts[index].author,
+              //  style: Theme.of(context).textTheme.subtitle,
+              style: TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+             SizedBox(height: 10,)
 
+          ],      
+         ),
+         Positioned.fill(
+           child:Material(
+             color: Colors.transparent,
+             child: InkWell(
+               splashColor: Colors.yellow.withOpacity(0.3),
+               highlightColor: Colors.red.withOpacity(0.5),
+               onTap: (){
+                //  debugPrint('tap');
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => PostShow(post: posts[index])
+                  )
+                );
+               },
+             ),
+           ) ,
+         )
        ],
-     ),
+     )
 
    );
  }
