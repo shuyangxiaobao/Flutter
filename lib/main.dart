@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hello_world/demo/9.form_demo.dart';
 import 'model/post.dart';
 import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
@@ -12,6 +13,7 @@ import 'demo/layout_demo.dart';
 import 'demo/7_view_demo.dart';
 import 'demo/7.sliver_demo.dart';
 import 'demo/8.navigator_demo.dart';
+import 'entrance.dart';
 void main(){
   runApp(App()
    
@@ -26,19 +28,23 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return  MaterialApp(
-      debugShowCheckedModeBanner: true, //关闭debug 标识
-      home: Home(),
+      debugShowCheckedModeBanner: false, //关闭debug 标识
+      // home: Home(),
       // home: NavigatorDemo(),
       // home: SliverDemo(),
+      home: Entrance(),
       initialRoute: 'www',
       routes: {
-        'www': (context) => Home(),
+        '/home': (context) => Home(),
         '/about':(context) => Page(title: "关于"),
+        '/form':(context) => FormDemo(),
+
       },
       theme: ThemeData(
-        primarySwatch: Colors.green, //导航栏颜色
+        primarySwatch: Colors.orange, //导航栏颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
         splashColor: Colors.red,
+        accentColor: Colors.purple,
 
       )
     );
@@ -63,9 +69,11 @@ class Home extends StatelessWidget{
       //   ),
       actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.arrow_back),
               tooltip: "Search",
-              onPressed: ()=> debugPrint("search ...."),
+              onPressed:(){
+                Navigator.pop(context);
+              }
             ),
              IconButton(
               icon: Icon(Icons.send),
