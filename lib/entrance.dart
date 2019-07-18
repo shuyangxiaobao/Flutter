@@ -32,6 +32,12 @@ import 'package:flutter/material.dart';
                 Navigator.pushNamed(context, "/form");
               },
             ),
+              FlatButton(
+              child: Text('10.mdc'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/mdc");
+              },
+            ),
           ],
         ),
       ),
