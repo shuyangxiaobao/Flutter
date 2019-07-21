@@ -36,7 +36,13 @@ import 'package:flutter/material.dart';
               child: Text('10.mdc'),
               onPressed: (){
                 Navigator.pushNamed(context, "/mdc");
-              },
+              }, 
+            ),
+            FlatButton(
+              child: Text('11 Flutter 移动应用：输入'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day11demo");
+              }, 
             ),
           ],
         ),

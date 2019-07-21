@@ -15,6 +15,7 @@ import 'demo/7.sliver_demo.dart';
 import 'demo/8.navigator_demo.dart';
 import 'entrance.dart';
 import 'demo/10.material_components.dart';
+import 'demo/11.Day11Demo.dart';
 void main(){
   runApp(App()
    
@@ -40,6 +41,8 @@ class App extends StatelessWidget{
         '/about':(context) => Page(title: "关于"),
         '/form':(context) => FormDemo(),
         '/mdc':(context) => MaterialComponents(),
+        '/day11demo':(context) => Day11Demo(),
+
 
       },
       theme: ThemeData(
