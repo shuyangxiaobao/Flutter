@@ -16,6 +16,12 @@ import 'demo/8.navigator_demo.dart';
 import 'entrance.dart';
 import 'demo/10.material_components.dart';
 import 'demo/11.Day11Demo.dart';
+import 'demo/12.Day12Demo.dart';
+import 'demo/13.Day13Demo.dart';
+import 'demo/14.Day14Demo.dart';
+import 'demo/15.Day15Demo.dart';
+import 'demo/16.Day16Demo.dart';
+
 void main(){
   runApp(App()
    
@@ -42,8 +48,11 @@ class App extends StatelessWidget{
         '/form':(context) => FormDemo(),
         '/mdc':(context) => MaterialComponents(),
         '/day11demo':(context) => Day11Demo(),
-
-
+        '/day12demo':(context) => Day12Demo(),
+        '/day13demo':(context) => Day13Demo(),
+        '/day14demo':(context) => Day14Demo(),
+        '/day15demo':(context) => Day15Demo(),
+        '/day16demo':(context) => Day16Demo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.orange, //导航栏颜色

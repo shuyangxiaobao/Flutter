@@ -44,6 +44,36 @@ import 'package:flutter/material.dart';
                 Navigator.pushNamed(context, "/day11demo");
               }, 
             ),
+             FlatButton(
+              child: Text('12 Flutter 移动应用：对话框'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day12demo");
+              }, 
+            ),
+             FlatButton(
+              child: Text('13 Flutter移动应用：MDC'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day13demo");
+              }, 
+            ),
+             FlatButton(
+              child: Text('14 Flutter 移动应用：状态管理'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day14demo");
+              }, 
+            ),
+            FlatButton(
+              child: Text('15 Flutter 移动应用：Stream'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day15demo");
+              }, 
+            ),
+            FlatButton(
+              child: Text('16 Flutter 移动应用：RxDart'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day16demo");
+              }, 
+            ),
           ],
         ),
       ),
