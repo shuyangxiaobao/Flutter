@@ -39,7 +39,7 @@ class _StreamDemoHomeOneState extends State<StreamDemoHomeOne> {
     super.initState();
     print('create a stream');
     // Stream<String> _streamDemo = Stream.fromFuture(fetchData());
-    _streamDemo = StreamController.broadcast();
+    _streamDemo = StreamController.broadcast();  //广播
     _sinkDemo = _streamDemo.sink;
     print('start listening on a stream');
     _streamDemoSubscription = _streamDemo.stream.listen(onData,onError: onError,onDone: onDone);
