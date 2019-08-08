@@ -39,7 +39,7 @@ class _RXDartDemoFiveHomeState extends State<RXDartDemoFiveHome> {
       // ).listen((data) => print(data));
 
       // _textFiledSubject
-      // .where((item) => item.length > 9)
+      // .where((item) => item.length > 9) //
       // .listen((data) => print(data));
 
       _textFiledSubject

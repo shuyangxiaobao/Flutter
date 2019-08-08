@@ -17,7 +17,6 @@ import 'package:flutter/material.dart';
               },
             ),
             ),
-           
 
              FlatButton(
               child: Text('about'),
@@ -72,6 +71,30 @@ import 'package:flutter/material.dart';
               child: Text('16 Flutter 移动应用：RxDart'),
               onPressed: (){
                 Navigator.pushNamed(context, "/day16demo");
+              }, 
+            ),
+             FlatButton(
+              child: Text('17 Flutter 移动应用：BLoC'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day17demo");
+              }, 
+            ),
+               FlatButton(
+              child: Text('18 Flutter 移动应用：网络请求'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day18demo");
+              }, 
+            ),
+             FlatButton(
+              child: Text('19 Flutter 移动应用：动画'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day19demo");
+              }, 
+            ),
+             FlatButton(
+              child: Text('20 Flutter移动应用：国际化'),
+              onPressed: (){
+                Navigator.pushNamed(context, "/day20demo");
               }, 
             ),
           ],

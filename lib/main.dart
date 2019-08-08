@@ -21,6 +21,14 @@ import 'demo/13.Day13Demo.dart';
 import 'demo/14.Day14Demo.dart';
 import 'demo/15.Day15Demo.dart';
 import 'demo/16.Day16Demo.dart';
+import 'demo/17.Day17Demo.dart';
+import 'demo/18.Day18demo.dart';
+import 'demo/19.Day19demo.dart';
+import 'demo/20.Day20demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'demo/20.bao_demo_localizations.dart';
+import 'demo/20.ninghao_demo_localizations.dart';
+// import 'demo/i18n/intl/ninghao_demo_localizations.dart';
 
 void main(){
   runApp(App()
@@ -36,12 +44,31 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return  MaterialApp(
+      // locale: Locale('zh','CN'), //设置语言
+      // locale: Locale('en','US'),
+
+
+//设置语言 (优先级更高)
+      localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocale){
+        return Locale('zh','CN');
+        // return Locale('en','US');
+      },
+
+      localizationsDelegates: [
+        // GeqiangbaoLocationsDelegate(),
+        NinghaoDemoLocalizationsDelegate(),
+       GlobalMaterialLocalizations.delegate,
+       GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en','US'),
+        Locale('zh','CN'),
+      ],
+
+
       debugShowCheckedModeBanner: false, //关闭debug 标识
-      // home: Home(),
-      // home: NavigatorDemo(),
-      // home: SliverDemo(),
       home: Entrance(),
-      initialRoute: 'www',
+      // initialRoute: '/day11demo',
       routes: {
         '/home': (context) => Home(),
         '/about':(context) => Page(title: "关于"),
@@ -53,6 +80,11 @@ class App extends StatelessWidget{
         '/day14demo':(context) => Day14Demo(),
         '/day15demo':(context) => Day15Demo(),
         '/day16demo':(context) => Day16Demo(),
+        '/day17demo':(context) => Day17Demo(),
+        '/day18demo':(context) => Day18Demo(),
+        '/day19demo':(context) => Day19Demo(),
+        '/day20demo':(context) => Day20Demo(),
+
       },
       theme: ThemeData(
         primarySwatch: Colors.orange, //导航栏颜色
