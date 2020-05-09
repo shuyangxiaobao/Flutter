@@ -83,10 +83,15 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
 
   fetchPost() async {
     final response = await http.get('https://resources.ninghao.net/demo/posts.json');
+//    final response = await http.get('http://127.0.0.1/config.json');
+
     print('777777 statusCode :${response.statusCode}');
-    // print('88888888 body:${response.body}');
+
+     print('88888888 body:${response.body}');
     var bodyStr= response.body;
     var bodyJson = json.decode(bodyStr);
+    print('111');
+    print('${bodyJson}'+ "110");
 
     print(bodyJson['posts'][0]['title']+ '   99999');
 

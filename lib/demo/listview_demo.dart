@@ -18,16 +18,19 @@ class ListViewDemo extends StatelessWidget{
  Widget _listItemBuilder(BuildContext context,int index){
    return Container(
      color: Colors.white,
-     margin: EdgeInsets.fromLTRB(10,20,30,40), //left top  right bottom
+     margin: EdgeInsets.fromLTRB(10,10,10,10), //left top  right bottom
      child: Stack(
        children: <Widget>[
          Column(
+             mainAxisAlignment: MainAxisAlignment.start,
+             crossAxisAlignment: CrossAxisAlignment.start,
+
           children: <Widget>[
             AspectRatio(
               aspectRatio: 16/9,
               child: Image.network(posts[index].imageUrl,fit: BoxFit.cover,),
             ),
-            SizedBox(height: 10.0,),
+            SizedBox(height: 5.0,),
             Text(
               posts[index].title,
               style: Theme.of(context).textTheme.title,
@@ -47,16 +50,16 @@ class ListViewDemo extends StatelessWidget{
                 fontWeight: FontWeight.w400,
               ),
             ),
-             SizedBox(height: 10,)
+//             SizedBox(height: 10,)
 
           ],      
          ),
          Positioned.fill(
            child:Material(
-             color: Colors.transparent,
+             color: Color(0x00000000),
              child: InkWell(
-               splashColor: Colors.yellow.withOpacity(0.3),
-               highlightColor: Colors.red.withOpacity(0.5),
+               splashColor: Colors.yellow.withOpacity(0.3), // 飞溅的颜色
+               highlightColor: Colors.white.withOpacity(0.3), //高亮的颜色
                onTap: (){
                 //  debugPrint('tap');
                 Navigator.of(context).push(

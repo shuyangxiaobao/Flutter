@@ -30,12 +30,12 @@ class DrawDemo extends StatelessWidget{
                     BlendMode.srcOver,
                   )  
                 )  
-              )//背景              
+              )//背景
             ),
 
 
              ListTile(
-               title: Text('Message', textAlign: TextAlign.left,),
+               title: Text('Message3', textAlign: TextAlign.left,),
                trailing: Icon(Icons.message, color: Color(0xff7878ff),size: 30,),
                subtitle: Text('subtitle', textAlign: TextAlign.left,),
                onTap: () => Navigator.pop(context), //关闭抽屉

@@ -19,7 +19,6 @@ class Demo201 extends StatelessWidget {
             // Text(GeqiangbaoLocations.of(context).title),
             Text(NinghaoDemoLocalizations.of(context).title),
             Text(NinghaoDemoLocalizations.of(context).greet('67')),
-
           ],
         ),
       ),

@@ -35,10 +35,10 @@ class NavigatorDemo  extends StatelessWidget {
 
 
 
-class Page extends StatelessWidget {
+class Page2 extends StatelessWidget {
 
   final String title;
-  Page({
+  Page2({
     this.title
   });
 

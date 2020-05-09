@@ -28,6 +28,7 @@ import 'demo/20.Day20demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'demo/20.bao_demo_localizations.dart';
 import 'demo/20.ninghao_demo_localizations.dart';
+import '21/21.TestDemo.dart';
 // import 'demo/i18n/intl/ninghao_demo_localizations.dart';
 
 void main(){
@@ -44,7 +45,7 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return  MaterialApp(
-      // locale: Locale('zh','CN'), //设置语言
+      // locale: Locale('zh','CN'), //设置语言x
       // locale: Locale('en','US'),
 
 
@@ -71,7 +72,7 @@ class App extends StatelessWidget{
       // initialRoute: '/day11demo',
       routes: {
         '/home': (context) => Home(),
-        '/about':(context) => Page(title: "关于"),
+        '/about':(context) => Page2(title: "关于"),
         '/form':(context) => FormDemo(),
         '/mdc':(context) => MaterialComponents(),
         '/day11demo':(context) => Day11Demo(),
@@ -85,11 +86,12 @@ class App extends StatelessWidget{
         '/day19demo':(context) => Day19Demo(),
         '/day20demo':(context) => Day20Demo(),
 
+        '/day21demo':(context) => Day21Demo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.orange, //导航栏颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-        splashColor: Colors.red,
+        splashColor: Color.fromRGBO(255, 255, 255, 0),
         accentColor: Colors.purple,
 
       )
@@ -103,32 +105,47 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
+    print(Home);
     return DefaultTabController(
       length: 5,
       child: Scaffold(
       // backgroundColor: Colors.blue,
       appBar: AppBar( //顶部工具栏
       // leading: IconButton(
-      //     icon: Icon(Icons.menu),
+      //     icon: Icon(Icons.merge_type),
       //     tooltip: 'Navigation',
       //     onPressed: () => debugPrint('Navigation button is pressed'),
       //   ),
       actions: <Widget>[
+
             IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: Icon(Icons.battery_alert),
               tooltip: "Search",
               onPressed:(){
                 Navigator.pop(context);
               }
             ),
              IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: "Search",
+              onPressed: ()=> debugPrint("send ...."),
+            ),
+            IconButton(
+                icon: Icon(Icons.arrow_back),
+                tooltip: "Search",
+                onPressed:(){
+                  Navigator.pop(context);
+                }
+            ),
+            IconButton(
               icon: Icon(Icons.send),
               tooltip: "Search",
               onPressed: ()=> debugPrint("send ...."),
             ),
-            
+
           ],
-      title: Text('小妞'),
+      title: Text('小妞111'),
       elevation: 0.0,//阴影
       backgroundColor: Colors.orange, //导航栏颜色
       bottom: TabBar(

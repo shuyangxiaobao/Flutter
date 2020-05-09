@@ -8,7 +8,7 @@ class BasicDemo extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
 
-        // return Textdemo1();
+//         return Textdemo1();
     // return RichTextDemo1();
     return ContainerDemo();
 
